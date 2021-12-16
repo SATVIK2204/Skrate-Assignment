@@ -1,26 +1,13 @@
 const express = require('express');
+const { createUser, getAllUsers, deleteUser } = require('../controllers/usersController');
 const router = express.Router();
-const User = require('../models/User')
-const { v4: uuidv4 } = require('uuid');
-const { BadRequestError, NotFoundError } = require('../errors');
 
 
-router.post('/new', async (req,res)=>{
 
-    const username = req.body.username
-    if(!username){
-        throw new BadRequestError('Please Enter a UserName');
-    }
-    req.body.uid = uuidv4()
-    console.log(req.body.uid);
-    const user = await User.create({ ...req.body });
+router.post('/new', createUser);
 
-    res.send(req.body.uid);
-})
+router.delete('/delete/:id', deleteUser)
 
-router.get('/all', async (req, res) => {
-  const users = await User.find({}, '-_id username uid').lean();
-  res.json(users);
-});
+router.get('/all', getAllUsers);
 
 module.exports = router;

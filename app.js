@@ -13,6 +13,7 @@ const meetingsRoutes = require('./routes/meetingsRoutes')
 
 //MISC
 const connectDB = require('./db/connect');
+const cors = require('cors');
 
 // Error Handler
 const notFound = require('./middleware/not-found');
@@ -35,6 +36,8 @@ if (process.env.NODE_ENV === 'development') {
 
 // Connect to Database
 connectDB();
+
+app.use(cors())
 
 // Body parser
 app.use(express.urlencoded({ extended: false }));
