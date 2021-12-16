@@ -6,8 +6,9 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please provide name'],
     maxlength: 50,
     minlength: 3,
+    unique: true,
   },
-  
+
   uid: {
     type: String,
     required: [true, 'Please provide uid'],
