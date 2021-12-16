@@ -43,7 +43,7 @@ app.use(express.json());
 
 // Routes
 app.use(indexRoutes);
-app.use('/user', usersRoutes);
+app.use('/users', usersRoutes);
 app.use('/meetings', meetingsRoutes);
 
 // Use Error Handler

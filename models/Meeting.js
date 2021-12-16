@@ -25,10 +25,6 @@ const meetingSchema = new mongoose.Schema({
     minlength: 4,
   },
 
-  //   user1: {
-  //     type: mongoose.Schema.Types.String,
-  //     ref: 'User',
-  //   },
 });
 
 meetingSchema.virtual('user1', {
