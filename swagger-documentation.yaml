@@ -1,0 +1,142 @@
+openapi: 3.0.0
+info:
+  title: Skrate-Api
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://satvik-skrate.herokuapp.com/
+  variables: {}
+paths:
+  /users/new:
+    post:
+      tags:
+      - User
+      summary: Create New User
+      operationId: /users/new
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+              - username
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: Salik
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/all:
+    get:
+      tags:
+      - User
+      summary: Display All Users
+      operationId: /users/all
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/delete/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The user ID
+    delete:
+      tags:
+      - User
+      summary: Delete a User
+      operationId: users/delete
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /meetings/new:
+    post:
+      tags:
+      - Meeting
+      summary: Create new Meeting
+      operationId: /meetings/new
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+              - uid1
+              - uid2
+              - date
+              type: object
+              properties:
+                uid1:
+                  type: string
+                  example: 0172032b-2e8d-4bd5-8b22-c12dceae1e6b
+                uid2:
+                  type: string
+                  example: c340d4df-3436-4841-ba29-53f756abd973
+                date:
+                  type: string
+                  example: 4-10-2022
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /meetings/all:
+    get:
+      tags:
+      - Meeting
+      summary: Display all Meetings and User info
+      operationId: /meetings/all
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /meetings/delete/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The meeting ID
+    delete:
+      tags:
+      - Meeting
+      summary: Delete Meeting
+      operationId: /meetings/delete
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+security:
+- {}
+tags:
+- name: User
+  description: ''
+- name: Meeting
+  description: ''

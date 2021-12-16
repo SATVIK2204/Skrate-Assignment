@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 
+
+
 // Routes
 const indexRoutes = require('./routes/index');
 const usersRoutes = require('./routes/usersRoutes');
@@ -18,6 +20,13 @@ const cors = require('cors');
 // Error Handler
 const notFound = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
+
+// Swagger setup
+const swaggerUI = require('swagger-ui-express')
+const YAML = require('yamljs')
+const swaggerDocument = YAML.load('./swagger-documentation.yaml')
+
+//----------------------------------------------------------------------
 
 // Initialize the app
 const app = express();
@@ -46,6 +55,7 @@ app.use(express.json());
 
 // Routes
 app.use(indexRoutes);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 app.use('/users', usersRoutes);
 app.use('/meetings', meetingsRoutes);
 
