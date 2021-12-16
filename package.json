@@ -1,0 +1,33 @@
+{
+  "name": "skrate-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "cross-env NODE_ENV=development nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SATVIK2204/Skrate-Assignment.git"
+  },
+  "author": "Satvik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SATVIK2204/Skrate-Assignment/issues"
+  },
+  "homepage": "https://github.com/SATVIK2204/Skrate-Assignment#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "http-status-codes": "^2.1.4",
+    "mongoose": "^6.1.2",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15"
+  }
+}
