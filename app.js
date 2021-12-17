@@ -1,21 +1,18 @@
+
+
+//MISC
 require('express-async-errors');
-
 const express = require('express');
-
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-
-
+const connectDB = require('./db/connect');
+const cors = require('cors');
 
 // Routes
 const indexRoutes = require('./routes/index');
 const usersRoutes = require('./routes/usersRoutes');
 const meetingsRoutes = require('./routes/meetingsRoutes')
-
-//MISC
-const connectDB = require('./db/connect');
-const cors = require('cors');
 
 // Error Handler
 const notFound = require('./middleware/not-found');
@@ -46,6 +43,7 @@ if (process.env.NODE_ENV === 'development') {
 // Connect to Database
 connectDB();
 
+// Initializing Cors
 app.use(cors())
 
 // Body parser
@@ -55,7 +53,7 @@ app.use(express.json());
 
 // Routes
 app.use(indexRoutes);
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))  // Routing to Swagger UI Documentaion
 app.use('/users', usersRoutes);
 app.use('/meetings', meetingsRoutes);
 
