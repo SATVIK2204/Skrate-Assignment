@@ -39,6 +39,36 @@
 | `GET`   | `/meetings/all`                 | -                 |
 | `DELETE`    | `/meetings/delete/{id}` | The corresponsing UID of the meeting to be deleted |
 
+## External Libraries and Packages
+
+1. express-async-errors
+```
+To Avoid Repetitive try/catch blocks in middlewares and let error, when promise rejected, reach to our error-handler for app avoiding `UnhandledPromiseRejectionWarning`
+```
+2. dotenv
+```
+To set Environment Variables
+```
+3. morgan
+```
+To log HTTP requests in the console for better logging and understanding.
+```
+4. cors
+```
+To support cross-origin requests and data transfers.
+```
+5. swagger-ui-express
+```
+For Auto Documentaion Using Swagger
+```
+6. yamljs
+```
+To read and lodd YAML files
+```
+7. nodemon
+```
+To auto restart node server after making changes
+```
 
 
 
