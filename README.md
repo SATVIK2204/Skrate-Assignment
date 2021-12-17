@@ -1,9 +1,9 @@
 
 # Introduction
 
-**Job Application Manager** is a RESTful website where a user can manage their job applications to different companies.
+**Skrate Assignment**
 
-## [Job Application Manager Live Demo](https://jam-resider.herokuapp.com/)
+## [API Live Demo](https://satvik-skrate.herokuapp.com/)
 
 ## 🚧 Technology Stack
 
@@ -11,8 +11,8 @@
 - **Framework** - ExpressJS
 - **Database** - MongoDB
 - **Cloud database service** - MongoDB Atlas
-- **Session Authentaication** - JSON Web Tokens
 - **Deployment** - Heroku.
+- **Documentation** - Swagger UI
 
 ## Steps to Run On Local Machine
 
