@@ -15,9 +15,9 @@ const createMeeting = async (req, res) => {
 
 
 const getAllMeetings = async (req, res) => {
-  const meetings = await Meeting.find({}, '-_id -__v')
+  const meetings = await Meeting.find({}, '-id -_id  -__v')
     .populate({ path: 'user1', select: '-_id username uid' })
-    .populate({ path: 'user2', select: '-_id username uid' });
+    .populate({ path: 'user2', select: '-_id username uid' }).lean();
   res.json(meetings);
 };
 
