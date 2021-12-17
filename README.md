@@ -28,6 +28,16 @@
 5. Start the application in develpoment mode using `npm run dev` or production mode using `npm start`.
 6. Just visit localhost:3000 in your browser.
 
+## API Endpoints
+
+| Method   | URL                                      | Description of data to be sent                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `POST`    | `/users/new`                             | Username as the Name of user                      |
+| `GET`   | `/users/all`                             | -                       |
+| `DELETE`    | `/users/delete/{id}`                          | The corresponding UID of the  user you want to delete                      |
+| `POST`  | `/meetings/new`                          | UID1 as the uid existing user, UID2 as the uid of another existing user, Date                 |
+| `GET`   | `/meetings/all`                 | -                 |
+| `DELETE`    | `/meetings/delete/{id}` | The corresponsing UID of the meeting to be deleted |
 
 
 
